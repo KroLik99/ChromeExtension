@@ -13,3 +13,4 @@ inputBtn.addEventListener("click", function (){
     console.log(inputEl)
     }
 )
+
