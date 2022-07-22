@@ -26,3 +26,13 @@ button{
     margin: 10px;
     font-weight: bold;
 }
+#box-el{
+    cursor: pointer;
+    background: lightseagreen;
+    padding: 40px;
+    width: 200px;
+    text-align: center;
+    margin: 20px auto;
+    color: white;
+    font-weight: bold;
+}
