@@ -2,7 +2,8 @@ let myLeads = ["a","b","c"];
 const inputEl = document.getElementById("input-el");
 const inputBtn = document.getElementById("input-btn");
 
-//push the value "www.awesomelead.com" to myArray when the input button is clicked
+//Grab the ul and store it in a const variable called ulEl
+const ulEl = document.getElementById("ul-el")
 
 inputBtn.addEventListener("click", function (){
     myLeads.push(inputEl.value)
@@ -11,7 +12,7 @@ inputBtn.addEventListener("click", function (){
     console.log(myLeads)
     }
 )
-/* Log out the items in the myLeads array using a for loop*/
+/* Log out the items in the myLeads array using a for loop and add to ul*/
 for(let i =0; i<myLeads.length;i++){
-    console.log(myLeads[i]);
+    ulEl.textContent += myLeads[i] + " "
 }
