@@ -1,32 +1,27 @@
-/*
-Log out "Button clicked!" when the user clicks the SAVE input button
+let myLeads = ["a","b","c"];
+const inputEl = document.getElementById("input-el");
+const inputBtn = document.getElementById("input-btn");
 
+//Grab the ul and store it in a const variable called ulEl
+const ulEl = document.getElementById("ul-el")
+const buyEl = document.getElementById("buy-el")
 
-function clicked(){
-    console.log("Button clicked from onclick attribute!")
+inputBtn.addEventListener("click", function (){
+    myLeads.push(inputEl.value)
+    console.log("Clicked")
+    console.log("The input is: " + inputEl)
+    console.log(myLeads)
+    }
+)
+/* Log out the items in the myLeads array using a for loop and add to ul*/
+for(let i =0; i<myLeads.length;i++){
+    ulEl.innerHTML += "<li>" + myLeads[i] + "</li> "
 }
-let inputBtn = document.getElementById("input-btn");
-inputBtn.addEventListener("click", function () {
-    console.log("Button clicked from addEvenListener.")
+
+buyEl.innerHTML = "<button>Buy!</button>"
+/* When clicked, render a paragraph under the button in the container
+that says "Thank you for buying"
+ */
+buyEl.addEventListener("click", function (){
+    buyEl.innerHTML += "<p>Thank you for buying!</p>"
 })
-
-
-If possible use const, otherwise let
-    Which variables below should be changed from let to const?
-The customer wants to order some stuff. Here are the details:
-    */
-const basePrice = 520;
-const discount = 120;
-let shippingCost = 12;
-let shippingTime = "5-12 days"
-
-//Whoops, turns out shipping is more complex:
-
-shippingCost = 15;
-shippingTime = "7-14 days";
-
-//calculating the full price
-const fullprice = basePrice -discount + shippingCost
-
-//finally notifying the customer;
-console.log("Total cost: "+ fullprice + ". It will arrive in "+ shippingTime)
