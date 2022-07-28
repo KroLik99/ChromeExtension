@@ -8,11 +8,15 @@ const ulEl = document.getElementById("ul-el")
 inputBtn.addEventListener("click", function (){
     myLeads.push(inputEl.value)
     console.log("Clicked")
-    console.log("The input is: " + inputEl)
     console.log(myLeads)
     }
 )
-/* Log out the items in the myLeads array using a for loop and add to ul*/
+/* Create a variable listItems to hold all the HTML for the list items
+* Assign it to an empty string to begin with */
+let listItems =[];
 for(let i =0; i<myLeads.length;i++){
-    ulEl.innerHTML += "<li>" + myLeads[i] + "</li> "
+    /* Add the item to the listItems variable instead of the ulEl.innerHTML*/
+    listItems += "<li>"+myLeads[i]+"</li>"
 }
+/*Render the listItems inside the unordered list using ulEl.innerHTML*/
+ulEl.innerHTML += listItems
