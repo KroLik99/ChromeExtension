@@ -1,4 +1,4 @@
-let myLeads = ["a","b","c"];
+let myLeads = [];
 const inputEl = document.getElementById("input-el");
 const inputBtn = document.getElementById("input-btn");
 
@@ -6,17 +6,18 @@ const inputBtn = document.getElementById("input-btn");
 const ulEl = document.getElementById("ul-el")
 
 inputBtn.addEventListener("click", function (){
+    myLeads =[]
     myLeads.push(inputEl.value)
-    console.log("Clicked")
-    console.log(myLeads)
+    renderLeads()
     }
 )
-/* Create a variable listItems to hold all the HTML for the list items
-* Assign it to an empty string to begin with */
-let listItems =[];
-for(let i =0; i<myLeads.length;i++){
-    /* Add the item to the listItems variable instead of the ulEl.innerHTML*/
-    listItems += "<li>"+myLeads[i]+"</li>"
+
+function renderLeads(){
+    let listItems =[];
+    for(let i =0; i<myLeads.length;i++){
+        /* Add the item to the listItems variable instead of the ulEl.innerHTML*/
+        listItems += "<li>"+myLeads[i]+"</li>"
+    }
+    /*Render the listItems inside the unordered list using ulEl.innerHTML*/
+    ulEl.innerHTML += listItems
 }
-/*Render the listItems inside the unordered list using ulEl.innerHTML*/
-ulEl.innerHTML += listItems
