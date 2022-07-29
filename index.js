@@ -6,18 +6,16 @@ const inputBtn = document.getElementById("input-btn");
 const ulEl = document.getElementById("ul-el")
 
 inputBtn.addEventListener("click", function (){
-    inputEl.value =""
     myLeads.push(inputEl.value)
+    inputEl.value =""
     renderLeads()
     }
 )
 
 function renderLeads(){
-    let listItems =[];
+    let listItems =""
     for(let i =0; i<myLeads.length;i++){
-        /* Add the item to the listItems variable instead of the ulEl.innerHTML*/
-        listItems += "<li>"+myLeads[i]+"</li>"
+        listItems += "<li><a target='_blank' href='" + myLeads[i] + "'>" + myLeads[i] +"</a></li>"
     }
-    /*Render the listItems inside the unordered list using ulEl.innerHTML*/
     ulEl.innerHTML += listItems
 }
